@@ -1,0 +1,15 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>x-robot fixture</title></head>
+<body>
+  <h1>x-robot local fixture</h1>
+  <input id="payload" placeholder="payload">
+  <button id="go">Go</button>
+  <div id="result"></div>
+  <a id="slow" href="#">slow</a>
+  <script>
+    document.getElementById('go').addEventListener('click', () => {
+      const v = document.getElementById('payload').value;
+      document.getElementById('result').textContent = 'got:' + v;
+    });
+  </script>
+</body></html>
