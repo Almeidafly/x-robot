@@ -14,3 +14,16 @@ A click (the trigger) starts a local action (a content script). That action deli
 - Every outbound action needs approval (layer 2).
 
 No license yet — pending owner review.
+
+## Run it
+```bash
+npm install
+npx playwright install chromium
+npm test                                   # all tests, local fixture only
+node src/cli.js --demo --approve prompt    # demo on the local fixture; asks y/N before the outbound click
+node src/cli.js plan.json --approve queue  # file approval queue: set "decision" to "approved" in approvals/*.json
+```
+Kill switch: Ctrl-C, or create a file named `STOP` in the working directory. The run ends with `LIGHT: lit` or `LIGHT: dark (<reason>)`.
+Only `127.0.0.1`/`localhost` are allowed by default; `--allow host` adds hosts you own or may automate.
+
+Branch model: see [BRANCHES.md](BRANCHES.md).
