@@ -1,0 +1,14 @@
+{
+  "name": "x-robot",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Browser robot: trigger, payload, deliver, read back. Local fixture only by default.",
+  "bin": { "x-robot": "src/cli.js" },
+  "scripts": {
+    "test": "node --test test/",
+    "fixture": "node src/fixture-server.js",
+    "start": "node src/cli.js"
+  },
+  "dependencies": { "playwright": "^1.50.0" }
+}
